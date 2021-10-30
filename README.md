@@ -7,10 +7,10 @@ Clients are able to create a User profile and save their projects to share with 
 They can also access the library which will provide links and information on recommended projects, API's, different languages and featured projects.
 
 Libraries and technology used:
-Mysql
-Express
-jQuery
-JavaScript
+Mysql,
+Express,
+jQuery,
+JavaScript and 
 Faker
 
 Created by Katlynn Blanton, Kyle Lux, Morgan Moore and Sheri Foster
