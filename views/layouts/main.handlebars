@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Picker Home</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <header class="Main project-heading">
+    <h1>
+      Project Picker
+    </h1>
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+  </header>
+
+  <main class="main page-body">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
