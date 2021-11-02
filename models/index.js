@@ -1,5 +1,5 @@
-//const User = require('./User.js');
-//const Project = require('./Project');
+const User = require('./user');
+const Project = require('./project');
 
 User.hasMany(Project, {
     foreignKey: 'user_id',
