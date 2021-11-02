@@ -1,0 +1,40 @@
+<div>
+    <div>
+        <h2>Welcome, {{user.username}}!</h2>
+    </div>
+</div>
+
+<div>
+    <div>
+        <p>Username: {{user.username}}</p>
+        <p>Email Address: {{user.email}}</p>
+        <p>Repository Link:</p>
+    </div>
+    <div>
+        <button class="btn btn-sm" data-id="">Edit Profile</button>
+    </div>
+    <div>
+        <button class="btn btn-sm" data-id="">Delete Profile</button>
+    </div>
+</div>
+
+{{#if projects.length}}
+<div class="project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each projects as |project|}}
+    <div class="current-projects">
+        <div>
+            <h4 class="project-list"><a href="/project/{{project.id}}">{{project.title}}</a></h4>
+        </div>
+        <div>
+            <button class="btn btn-sm" data-id="{{project.id}}">DELETE</button>
+        </div>
+        <p>{{project.comments.length}}</p>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+
+
+<script src="/js/dashboard.js"></script>
