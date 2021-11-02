@@ -1,0 +1,31 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Project Idea Picker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Risingphoenix86/Project-2.git"
+  },
+  "author": "Kyle Lux, Morgan Moore, Sheri Foster, Katlynn Blanton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Risingphoenix86/Project-2/issues"
+  },
+  "homepage": "https://github.com/Risingphoenix86/Project-2#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "faker": "^5.5.3",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.9.0"
+  }
+}
