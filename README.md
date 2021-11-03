@@ -23,3 +23,6 @@ https://docs.google.com/document/d/1wj9Zx77az8IXRLCN0oteaG0sJac3HZwPakvTWtipJX0/
 
 Faker module:
 https://github.com/marak/Faker.js/
+
+Heroku link:
+https://project-picker-project-2.herokuapp.com/
