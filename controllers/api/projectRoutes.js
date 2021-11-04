@@ -21,3 +21,5 @@ router.post('/', withAuth, (req,res) => {
 router.put('/:id', withAuth, (req,res) => {
     console.log(req.body, req.params.id)
 })
+
+module.exports = router;
