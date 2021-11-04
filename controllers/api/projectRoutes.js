@@ -22,4 +22,4 @@ router.put('/:id', withAuth, (req,res) => {
     console.log(req.body, req.params.id)
 })
 
-module.exports = Project;
+module.exports = router;
