@@ -12,22 +12,52 @@
 </head>
 
 <body>
+  <nav class="menu">
+      <ul>
+        <li>
+          <a href="/">
+            <span class="text">Home</span>
+            <span class="line -right"></span>
+            <span class="line -top"></span>
+            <span class="line -left"></span>
+            <span class="line -bottom"></span>
+          </a>
+        </li>
+        <li>
+          <a href= "/dashboard">
+            <span class="text">User Dashboard</span>
+            <span class="line -right"></span>
+            <span class="line -top"></span>
+            <span class="line -left"></span>
+            <span class="line -bottom"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="text">Projects</span>
+            <span class="line -right"></span>
+            <span class="line -top"></span>
+            <span class="line -left"></span>
+            <span class="line -bottom"></span>
+          </a>
+        </li>
+        {{!-- <li><a href= "#">Library</a></li>
+        <li><a href= "#">Forums</a></li> --}}
+        {{#if logged_in}}
+        <button class="btn" type="submit" id="logout">logout</button>
+      {{else}}
+      <button class="btn" type="submit" id="login">login</button>
+      {{/if}}
+      </ul>
+  </nav>
   <header class="Main project-heading">
     <h1>
       Project Picker
     </h1>
     <h3> Determine your next project with ease using our project picking technology!</h3>
-
-
-    <nav class="menu">
-      <ul>
-        <li><a href= "/views/dashboard.handlebars">User Profile</a></li>
-        <li><a href="/views/project.handlebars">Projects</a></li>
-        <li><a href="/views/login.handlebars">Login</a></li>
-      </ul>
-    </nav>
-      
   </header>
+
+    
 
   <main class="main page-body">
     <!--Renders the templates for other pages -->
