@@ -3,47 +3,29 @@
         <h2>Projects Homepage</h2>
     </div>
 </div>
-    {{#each projects as |project|}}
+
+{{#each projects as |project|}}
 <div class="card">
-  <div>
-    <h3>{{project.name}}</h3>
-  </div>
     <div>
-      <p>{{description}}</p>
-      <p>{{user.username}}</p>
+      <h3>{{project.name}}</h3>
+    </div>
+    <div>
+       <p>{{description}}</p>
+       <p>{{user.username}}</p>
     </div>
     
 <div class="card">
-    <h3>Create a New Project</h3>
+    <h3>Current Projects</h3>
 
     {{#each projects as |project|}}
     <div class="current-projects">
         <div>
             {{}}}
         </div>
-        <div>
-            <button class="btn btn-sm" data-id="{{project.id}}">DELETE</button>
-        </div>
         <p>{{project.comments.length}}</p>
     </div>
     {{/each}}
 </div>
-{{/if}}
-
-
-<script src="/js/dashboard.js"></script>
-
-<div class="text-center">
-  <h2>{{project.name}}</h2>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}}</p>
-</div>
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
 
 <!-- form to create new project  --> 
 
@@ -70,22 +52,4 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-
-<script src="./js/profile.js"></script>
+<script src="/js/project.js"></script>
