@@ -1,4 +1,22 @@
-{{#each users as |user| }}
+<!-- Pulls in each projectgit  -->
+{{#each projects as |project| }}
+<div class="project-card">
+  <div class="card">
+    <h2>
+      <a href="/project/{{project.name}}">{{project.name}}</a>
+    </h2>
+    <p>Created by {{user.name}</p>
+  </div>
+  <div class="description">
+    <p>
+      {{project.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
+
+
+<!-- {{#each users as |user| }} Not sure if this is needed anywhere
 <div class="username entry-form">
   <div class="name">
     <h2>{{user.name}}</h2>
