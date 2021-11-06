@@ -1,43 +1,43 @@
-<div class="user-info">
+<div class="user-info container">
     <div>
         <div>
             <h2>Welcome, {{username}}!</h2>
         </div>
     </div>
 
-    <div>
-        <div>
-            <p>Username: {{username}}</p>
-            <p>Email Address: {{email}}</p>
-            <p>Repository Link:</p>
-        </div>
-        <div>
-            <button class="btn btn-sm" data-id="">Edit Profile</button>
-        </div>
-        <div>
-            <button class="btn btn-sm" data-id="">Delete Profile</button>
+    <div class="card">
+        <div class="card-body">
+            <div>
+                <p>Username: {{username}}</p>
+                <p>Email Address: {{email}}</p>
+                <p>Repository Link:</p>
+            </div>
+            <div>
+                <button class="btn btn-sm" data-id="">Edit Profile</button>
+                <button class="btn btn-sm" data-id="">Delete Profile</button>
+            </div>
         </div>
     </div>
-</div>
 
-{{#if projects.length}}
-<div class="project-list">
-    <h3>Current Projects:</h3>
-    {{#if (eq project.user_id user.id)}}
-    {{#each projects as |project|}}
-    <div class="current-projects">
-        <div>
-            <h4 class="project-list"><a href="/project/{{project.id}}">{{project.title}}</a></h4>
+    {{#if projects.length}}
+    <div class="project-list">
+        <h3>Current Projects:</h3>
+        {{#if (eq project.user_id user.id)}}
+        {{#each projects as |project|}}
+        <div class="current-projects">
+            <div>
+                <h4 class="project-list"><a href="/project/{{project.id}}">{{project.title}}</a></h4>
+            </div>
+            <div>
+                <button class="btn btn-sm" data-id="{{project.id}}">DELETE</button>
+            </div>
+            <p>{{project.comments.length}}</p>
         </div>
-        <div>
-            <button class="btn btn-sm" data-id="{{project.id}}">DELETE</button>
-        </div>
-        <p>{{project.comments.length}}</p>
+        {{/each}}
+        {{/if}}
     </div>
-    {{/each}}
     {{/if}}
 </div>
-{{/if}}
 
 
 <script src="/js/dashboard.js"></script>

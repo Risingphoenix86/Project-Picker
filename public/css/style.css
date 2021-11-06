@@ -89,6 +89,14 @@ nav .btn {
     justify-content: flex-end;
 }
 
+.card {
+  border: 1px solid dodgerblue;
+  border-radius: 15px;
+  width: 25%;
+  margin: auto;
+  text-align: center;
+}
+
 .glow-on-hover {
     width: 120px;
     height: 30px;
@@ -151,7 +159,7 @@ nav .btn {
 
 .login-page {
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: 50%;
     margin: -150px 0 0 -150px;
     width: 300px;
