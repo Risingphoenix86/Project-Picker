@@ -70,7 +70,7 @@ a {
     text-decoration: none;
 }
 
-.btn {
+nav .btn {
     position: absolute;
     right: 50px;
     top: 30px;
