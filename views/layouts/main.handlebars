@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Picker Home</title>
-<link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,16 +21,20 @@
 
     <nav class="menu">
       <ul>
-        <li><a href= "#">User Profile</a></li>
+        <li><a href= "/dashboard">User Profile</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href= "#">Library</a></li>
         <li><a href= "#">Forums</a></li>
       </ul>
+<<<<<<< HEAD
       {{#if logged_in}}
         <button class="btn" id="logout">logout</button>
       {{else}}
       <button class="btn" id="login">login</button>
       {{/if}}
+=======
+      <button class="btn btn-primary" type="submit" id="logout">logout</button>
+>>>>>>> ab46c6b437d56a0ad2c2470d37b2467756abeeab
     </nav>
       
   </header>
