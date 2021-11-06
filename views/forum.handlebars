@@ -1,0 +1,10 @@
+<section class="container">
+<h3 class="help-forum">Help Forum</h3>
+<h4> Troubleshoot and ask for help in the help forum</h4>
+
+<section class="Questions">
+    {{#each open.question as |question|}}
+    {{>question.details}}
+    {{/each}}
+</section>
+</section>

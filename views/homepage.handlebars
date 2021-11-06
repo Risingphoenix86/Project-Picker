@@ -1,13 +1,13 @@
-<!-- Pulls in each project -->
+<!-- Pulls in each projectgit  -->
 {{#each projects as |project| }}
 <div class="project-card">
   <div class="card">
     <h2>
-      <a href="/project/{{project.id}}">{{project.name}}</a>
+      <a href="/project/{{project.name}}">{{project.name}}</a>
     </h2>
-    <p>Created by {{project.user.name}</p>
+    <p>Created by {{user.name}</p>
   </div>
-  <div class="col-md-7">
+  <div class="description">
     <p>
       {{project.description}}
     </p>
