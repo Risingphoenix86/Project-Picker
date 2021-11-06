@@ -10,7 +10,7 @@
   </div>
     <div>
       <p>{{description}}</p>
-      <p>{{user.name}}</p>
+      <p>{{user.username}}</p>
     </div>
     
 <div class="card">
@@ -45,27 +45,27 @@
 </div>
 
 
-<!-- add in create new project in AM --> 
+<!-- form to create new project  --> 
 
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Project:</h3>
 
-    <form class="form new-project-form">
+        <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
+        <label for="project-name">Project Name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="user-name">User Name</label>:</label>
+        <input class="form-input" type="text" id="user-name" name="user-name" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
+        <label for="project-desc">Description:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Create Project</button>
       </div>
     </form>
   </div>
