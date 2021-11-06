@@ -21,17 +21,10 @@
 
     <nav class="menu">
       <ul>
-        <li><a href= "/dashboard">User Profile</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href= "#">Library</a></li>
-        <li><a href= "#">Forums</a></li>
+        <li><a href= "/views/dashboard.handlebars">User Profile</a></li>
+        <li><a href="/views/project.handlebars">Projects</a></li>
+        <li><a href="/views/login.handlebars">Login</a></li>
       </ul>
-      
-      {{#if logged_in}}
-        <button class="btn" type="submit" id="logout">logout</button>
-      {{else}}
-      <button class="btn" type="submit" id="login">login</button>
-      {{/if}}
     </nav>
       
   </header>
