@@ -1,27 +1,29 @@
-<div>
+<div class="user-info">
     <div>
-        <h2>Welcome, {{user.username}}!</h2>
+        <div>
+            <h2>Welcome, {{username}}!</h2>
+        </div>
     </div>
-</div>
 
-<div>
     <div>
-        <p>Username: {{user.username}}</p>
-        <p>Email Address: {{user.email}}</p>
-        <p>Repository Link:</p>
-    </div>
-    <div>
-        <button class="btn btn-sm" data-id="">Edit Profile</button>
-    </div>
-    <div>
-        <button class="btn btn-sm" data-id="">Delete Profile</button>
+        <div>
+            <p>Username: {{username}}</p>
+            <p>Email Address: {{email}}</p>
+            <p>Repository Link:</p>
+        </div>
+        <div>
+            <button class="btn btn-sm" data-id="">Edit Profile</button>
+        </div>
+        <div>
+            <button class="btn btn-sm" data-id="">Delete Profile</button>
+        </div>
     </div>
 </div>
 
 {{#if projects.length}}
 <div class="project-list">
     <h3>Current Projects:</h3>
-
+    {{#if (eq project.user_id user.id)}}
     {{#each projects as |project|}}
     <div class="current-projects">
         <div>
@@ -33,6 +35,7 @@
         <p>{{project.comments.length}}</p>
     </div>
     {{/each}}
+    {{/if}}
 </div>
 {{/if}}
 

@@ -1,12 +1,23 @@
 body {
     background: url("https://image.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg");
     background-size: cover;
+    font-family: Oswald, sans-serif;
 }
 
 h1 {
     font-family: Oswald, sans-serif;
     font-size: 50px;
-    padding-left: 10px;
+    padding-left: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color:  #5c348c;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 12px;
+    padding-left: 50px;
+    color: dodgerblue;
 }
 
 .login-page {
@@ -43,6 +54,34 @@ h1 {
     padding-top: 10px;
     padding-bottom: 10px;
     width: 70%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 10px 0 0;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    padding: 8px;
+    text-decoration: none;
+}
+
+nav .btn {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+.menu {
+    display: inline;
+}
+
+.project-heading {
+    text-decoration: none;
 }
 
 .form-group {
@@ -125,3 +164,101 @@ h1 {
 h2 {
     text-align: center;
 }
+
+.menu a {
+    padding: 0.7em calc(0.7em * 1.2);
+    display: inline-block;
+    border: 3px solid transparent;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+  }
+  .menu a .text {
+    transform: translate3d(0, 0.7em, 0);
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  }
+  .menu a:after {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: calc(0.7em * 1.2);
+    right: calc(0.7em * 1.2);
+    height: 3px;
+    background: dodgerblue;
+    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+    transform-origin: left;
+  }
+  .menu .line {
+    position: absolute;
+    background: dodgerblue;
+  }
+  .menu .line.-right, .menu .line.-left {
+    width: 3px;
+    bottom: -3px;
+    top: -3px;
+    transform: scale3d(1, 0, 1);
+  }
+  .menu .line.-top, .menu .line.-bottom {
+    height: 3px;
+    left: -3px;
+    right: -3px;
+    transform: scale3d(0, 1, 1);
+  }
+  .menu .line.-right {
+    right: -3px;
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+    transform-origin: top;
+  }
+  .menu .line.-top {
+    top: -3px;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left;
+  }
+  .menu .line.-left {
+    left: -3px;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom;
+  }
+  .menu .line.-bottom {
+    bottom: -3px;
+    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+    transform-origin: right;
+  }
+  .menu a:hover .text,
+  .menu a:active .text {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  }
+  .menu a:hover:after,
+  .menu a:active:after {
+    transform: scale3d(0, 1, 1);
+    right: -3px;
+    left: -3px;
+    transform-origin: right;
+    transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+  }
+  .menu a:hover .line,
+  .menu a:active .line {
+    transform: scale3d(1, 1, 1);
+  }
+  .menu a:hover .line.-right,
+  .menu a:active .line.-right {
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+    transform-origin: bottom;
+  }
+  .menu a:hover .line.-top,
+  .menu a:active .line.-top {
+    transition: transform 0.08s linear 0.4s;
+    transform-origin: right;
+  }
+  .menu a:hover .line.-left,
+  .menu a:active .line.-left {
+    transition: transform 0.08s linear 0.48s;
+    transform-origin: top;
+  }
+  .menu a:hover .line.-bottom,
+  .menu a:active .line.-bottom {
+    transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+    transform-origin: left;
+  }
