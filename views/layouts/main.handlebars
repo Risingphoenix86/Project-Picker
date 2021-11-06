@@ -17,26 +17,28 @@
       Project Picker
     </h1>
     <h3> Determine your next project with ease using our project picking technology!</h3>
+
+
     <nav class="menu">
       <ul>
         <li><a href= "/">Home</a></li>
         <li><a href= "/dashboard">User Dashboard</a></li>
         <li><a href="/projects">Projects</a></li>
-        <li><a href= "#">Library</a></li>
-        <li><a href= "#">Forums</a></li>
       </ul>
-      <button class="btn btn-primary" type="submit" id="logout">logout</button>
     </nav>
       
   </header>
 
   <main class="main page-body">
+    <!--Renders the templates for other pages -->
+
     {{{ body }}}
+
   </main>
   <footer>
       
   </footer>
-
+<!-- Renders the script only if a user is logged in -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

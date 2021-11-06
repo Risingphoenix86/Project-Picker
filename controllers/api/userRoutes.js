@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Create user
 router.post('/', (req, res) => {
@@ -23,6 +24,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// login
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
@@ -56,6 +58,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
+//logout
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
@@ -65,5 +68,47 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
+
+
+//Delete User
+router.delete('/user/:id', (req, res) => {
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(404).json({message: 'No user found with this ID'});
+            return;
+        }
+        res.json(dbUserData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// MODIFY User
+router.put("/user/:id", withAuth, (req, res) => {
+    console.log(req.body, req.params.id)
+    User.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(affectedRows => {
+        if (affectedRows > 0) {
+            res.status(200).end();
+        } else {
+            res.status(404).end();
+        }
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
+
 
 module.exports = router;
