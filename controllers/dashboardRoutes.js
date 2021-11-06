@@ -4,13 +4,23 @@ const withAuth = require('../utils/auth');
 const { Project, User } = require('../models');
 
 router.get('/', withAuth, async (req, res) => {
-  res.render('dashboard', {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password']},
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+  
+    res.render('dashboard', {
+    ...user,
     logged_in: req.session.logged_in
-  })
-  .catch(err) 
+    });
+  } catch(err) {
     console.log(err);
     res.status(500).json(err);
-})
+  }
+});
 
 router.get('/', withAuth, async (req, res) => {
     try {
