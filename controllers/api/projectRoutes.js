@@ -2,22 +2,22 @@ const router = require('express').Router();
 const { Project, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
-    try {
-      const projectData = await Project.findAll({
-      });
+// router.get('/', withAuth, async (req, res) => {
+//     try {
+//       const projectData = await Project.findAll({
+//       });
 
-      const projects = projectData.map((project) => project.get({ plain: true }));
+//       const projects = projectData.map((project) => project.get({ plain: true }));
 
-      res.render('projectgit ', {
-        ...projects,
-        logged_in: req.session.logged_in
-      });
-    } catch(err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
+//       res.render('projectgit ', {
+//         ...projects,
+//         logged_in: req.session.logged_in
+//       });
+//     } catch(err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
+// });
 
 router.post('/', withAuth, (req,res) => {
     const body = req.body;
