@@ -5,16 +5,16 @@ const newFormHandler = async (event) => {
     const content = document.querySelector('#project-desc').value.trim();
 
     if (title && content) {
-      const response = await fetch(`/api/project`, {
+      const response = await fetch(`/api/projects`, {
         method: 'POST',
-        body: JSON.stringify({ name, description }),
+        body: JSON.stringify({ title, content }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/project');
+        document.location.replace('/projects');
       } else {
         alert(response.statusText);
       }
@@ -30,9 +30,9 @@ const newFormHandler = async (event) => {
           });
   
           if (response.ok) {
-              document.location.replace('/dashboard');
+              document.location.replace('/projects');
           } else {
-              alert('Failed to delete post');
+              alert('Failed to render posts');
           }
       }
   };
