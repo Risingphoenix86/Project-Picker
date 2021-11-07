@@ -5,20 +5,11 @@ const withAuth = require('../../utils/auth');
 router.get('/', withAuth, async (req, res) => {
     try {
       const projectData = await Project.findAll({
-        where: {
-          user_id: User.id
-        },
-        include: [
-          {
-            model: User,
-            attributes: ['username'],
-          },
-        ],
       });
 
       const projects = projectData.map((project) => project.get({ plain: true }));
 
-      res.render('project', {
+      res.render('projectgit ', {
         ...projects,
         logged_in: req.session.logged_in
       });
