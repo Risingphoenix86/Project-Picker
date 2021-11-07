@@ -4,6 +4,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 {{#each projects as |project|}}
 <div class="card">
     <div>
@@ -27,6 +28,8 @@
     {{/each}}
 </div>
 
+=======
+>>>>>>> ad623cd851df907a96d7014e79b8ae0711050a28
 <!-- form to create new project  --> 
 
 <div class="row mt-4">
@@ -38,10 +41,10 @@
         <label for="project-name">Project Name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
-      <div class="form-group">
+      {{!-- <div class="form-group">
         <label for="user-name">User Name</label>:</label>
         <input class="form-input" type="text" id="user-name" name="user-name" />
-      </div>
+      </div> --}}
       <div class="form-group">
         <label for="project-desc">Description:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
@@ -51,5 +54,22 @@
       </div>
     </form>
   </div>
+  
+{{#each projects as |project|}}
+<div class="card">
+    <div>
+      
+      <h3><a href="/projects/{{id}}">{{project.title}}</a></h3>
+    </div>
+    <div>
+       <p>{{project.content}}</p>
+       <p>{{user.username}}</p>
+    </div>
+</div> 
+{{/each}} 
+
+
+
 
 <script src="/js/project.js"></script>
+

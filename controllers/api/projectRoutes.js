@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+<<<<<<< HEAD
 router.get('/', async (req, res) => {
     try {
       const projectData = await Project.findAll({
@@ -10,9 +11,11 @@ router.get('/', async (req, res) => {
               attributes: ['username'],
           }
       });
+=======
+>>>>>>> ad623cd851df907a96d7014e79b8ae0711050a28
 
-      const projects = projectData.map((project) => project.get({ plain: true }));
 
+<<<<<<< HEAD
       res.render('project', {
         ...projects,
         logged_in: req.session.logged_in
@@ -22,6 +25,9 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+=======
+
+>>>>>>> ad623cd851df907a96d7014e79b8ae0711050a28
 
 router.post('/', withAuth, (req,res) => {
     const body = req.body;
