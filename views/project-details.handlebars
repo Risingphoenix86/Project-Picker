@@ -1,0 +1,11 @@
+ <!-- Unsure if this is necessary  -->
+<section class="card">
+  <!-- This card links to the content page using the Content ID -->
+  <a href="/projects/{{id}}">{{project.title}}</a>
+  
+    <!-- Pulls the project title and posts it on the page. -->
+     <h4 class="project-random">{{project.content}}</h4>
+     <p>Created by {{project.user.username}} on {{format_date project.date_created}}</p>
+
+  
+</section>

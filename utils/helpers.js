@@ -9,5 +9,8 @@ module.exports = {
           return `${word}s`;
         }
         return word;
+    },
+    eq: ( first, second) => {
+      return first === second;
     }
   }

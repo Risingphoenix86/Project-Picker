@@ -9,6 +9,6 @@ const projectRoutes = require('./api/projectRoutes');
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/dashboard', dashboardRoutes);
-router.use('/api/projectRoutes', projectRoutes);
+// router.use('/api/projectRoutes', projectRoutes);
 
 module.exports = router;

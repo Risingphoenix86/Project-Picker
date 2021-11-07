@@ -32,7 +32,7 @@ const seedDatabase = async () => {
       for (var i = 0; i < 50; i++) {
         var userProject = {
           title: faker.hacker.phrase(),
-          description: faker.lorem.paragraph(),
+          content: faker.lorem.paragraph(),
           user_id: users[Math.floor(Math.random() * users.length)].id,
         };
         newProjects.push(userProject);
