@@ -2,14 +2,18 @@ const router = require('express').Router();
 const { Project, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
       const projectData = await Project.findAll({
+          include: {
+              model: User,
+              attributes: ['username'],
+          }
       });
 
       const projects = projectData.map((project) => project.get({ plain: true }));
 
-      res.render('projectgit ', {
+      res.render('project', {
         ...projects,
         logged_in: req.session.logged_in
       });

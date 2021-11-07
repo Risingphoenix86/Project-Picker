@@ -26,7 +26,7 @@ const newFormHandler = async (event) => {
           const id = event.target.getAttribute('data-id');
   
           const response = await fetch(`/api/projects/${id}`, {
-              method: 'CREATE',
+              method: 'POST',
           });
   
           if (response.ok) {
