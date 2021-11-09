@@ -45,30 +45,13 @@ router.get('/projects', async (req, res) => {
       console.log(projects);
       res.render('project', {
         projects: projects,
-        //logged_in: req.session.logged_in
+        logged_in: req.session.logged_in
       });
     } catch(err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
-
-// router.get('projects/:id', async (req, res) => {
-//     try {
-//       const projectData = await Project.findOne({ where: [{ id : req.params.id}]
-//       });
-//       console.log(projectData);
-//       const project = projectData.get({ plain: true });
-
-//       res.render('project-details', {
-//         project,
-//         //logged_in: req.session.logged_in
-//       });
-//     } catch(err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
 
 router.get('/projects/:id', async (req, res) => {
     try {
@@ -85,13 +68,9 @@ router.get('/projects/:id', async (req, res) => {
     
     res.render('project-details', {
       project,
-      //logged_in: req.session.logged_in
+      logged_in: req.session.logged_in
     });
 
-    //   res.render('project-details', {
-    //             project,
-    //             //logged_in: req.session.logged_in
-    //           });
     } catch(err) {
         console.log(err);
         res.status(500).json(err);
