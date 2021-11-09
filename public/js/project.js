@@ -25,18 +25,6 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
   
-<<<<<<< HEAD
-          const response = await fetch(`/api/projects/${id}`, {
-              method: 'POST',
-          });
-  
-          if (response.ok) {
-              document.location.replace('/projects');
-          } else {
-              alert('Failed to render posts');
-          }
-      }
-=======
         const response = await fetch(`/api/projects/${id}`, {
             method: 'POST',
         });
@@ -46,7 +34,6 @@ const newFormHandler = async (event) => {
           alert('Failed to render posts');
         }
     }  
->>>>>>> ad623cd851df907a96d7014e79b8ae0711050a28
   };
 
   document

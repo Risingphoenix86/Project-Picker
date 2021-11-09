@@ -28,7 +28,7 @@ const delButtonHandler = async (event) => {
         const response = await fetch(`/api/projects/${id}`, {
             method: 'DELETE',
         });
-
+        console.log(response);
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
@@ -37,7 +37,6 @@ const delButtonHandler = async (event) => {
     }
 };
 
-
 document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
+  .querySelector('.user-projects')
+  .addEventListener('click', delButtonHandler);
