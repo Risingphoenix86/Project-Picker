@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Project } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req,res) => {
+router.get('/', async (req,res) => {
     try {
         const userData = await User.findAll({
             attributes: { exclude: ['password'] },
