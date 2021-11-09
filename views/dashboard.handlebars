@@ -1,43 +1,41 @@
-<div class="user-info container">
+<div class="user-info container">   
     <div>
-        <div>
-            <h2>Welcome, {{username}}!</h2>
+        <h2 class="dashboard-welcome">Welcome, {{username}}!</h2>
+    </div>
+    
+    <div class="personal-info">
+        <div class="border">
+            <div class="card-body">
+                <h3 class="personal-proj">User Information:</h3>
+                <div>
+                    <p>Username: {{username}}</p>
+                    <p>Email Address: {{email}}</p>
+                    <p>Repository Link:</p>
+                </div>
+                <div>
+                    <button class="btn btn-sm" data-id="">Edit Profile</button>
+                    <button class="btn btn-sm" data-id="">Delete Profile</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-            <div>
-                <p>Username: {{username}}</p>
-                <p>Email Address: {{email}}</p>
-                <p>Repository Link:</p>
-            </div>
-            <div>
-                <button class="btn btn-sm" data-id="">Edit Profile</button>
-                <button class="btn btn-sm" data-id="">Delete Profile</button>
+    {{!-- {{#if projects.length}} --}}
+        <div class="user-projects">
+            <div class="border">
+            <h3 class="personal-proj">Current Projects:</h3>
+                {{#if (eq project.user_id user.id)}}
+                    {{#each projects as |project|}}
+                        <div class="current-projects">
+                            <h4 class="project-list"><a href="/projects/{{project.id}}">{{project.title}}</a></h4>
+                            <button class="btn btn-sm" data-id="{{project.id}}">DELETE</button>
+                            <p>{{project.comments.length}}</p>
+                        </div>
+                    {{/each}}
+                {{/if}}
             </div>
         </div>
-    </div>
-
-    {{#if projects.length}}
-    <div class="project-list">
-        <h3>Current Projects:</h3>
-        {{#if (eq project.user_id user.id)}}
-        {{#each projects as |project|}}
-        <div class="current-projects">
-            <div>
-                <h4 class="project-list"><a href="/projects/{{project.id}}">{{project.title}}</a></h4>
-            </div>
-            <div>
-                <button class="btn btn-sm" data-id="{{project.id}}">DELETE</button>
-            </div>
-            <p>{{project.comments.length}}</p>
-        </div>
-        {{/each}}
-        {{/if}}
-    </div>
-    {{/if}}
+    {{!-- {{/if}} --}}
 </div>
-
 
 <script src="/js/dashboard.js"></script>

@@ -1,24 +1,27 @@
-<!-- Pulls in each project  -->
-<h1>Have you ever spent hours trying to think of a project idea?</h1>
-  <p class="">Learning to code comes with many challenges and one of the toughest is to think of projects that match your current skill level or challenge you to reach that next level. 
-    Mentors and teachers are invaluable in this endeavor, but if you are trying to pick up a new language or are teaching yourself those resources may not be open to you.
-    To remedy this, this application brings experienced coders and learners together. People can recommend a project that may have helped them overcome a particular hurdle, or come here to view recommended projects to help get inspiration for their next undertaking.
-  </p>
-{{#each projects as |project| }}
-<div class="project-card">
-  <div class="card">
-    <h2>
-      <a href="api/project/{{project.id}}">{{project.title}}</a>
-    </h2>
-    <p>Created by {{user.username}}</p>
-  </div>
-  <div class="description">
-    <p>
-      {{project.content}}
+<div class="homepage-description">
+  <div class="border">
+    <h1 class="concept">Have you ever spent hours trying to think of a project idea?</h1>
+    <p class="site-info">Learning to code comes with many challenges and one of the toughest is to think of projects that match your current skill level or challenge you to reach that next level. 
+      Mentors and teachers are invaluable in this endeavor, but if you are trying to pick up a new language or are teaching yourself those resources may not be open to you.
+      To remedy this, this application brings experienced coders and learners together. People can recommend a project that may have helped them overcome a particular hurdle, or come here to view recommended projects to help get inspiration for their next undertaking.
     </p>
   </div>
+  {{#each projects as |project| }}
+    <div class="project-card">
+      <div class="card">
+        <h2>
+          <a href="api/project/{{project.id}}">{{project.title}}</a>
+        </h2>
+        <p>Created by {{user.username}}</p>
+      </div>
+      <div class="description">
+        <p>
+          {{project.content}}
+        </p>
+      </div>
+    </div>
+  {{/each}}
 </div>
-{{/each}}
 
 
 <!-- {{#each users as |user| }} Not sure if this is needed anywhere
