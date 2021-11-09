@@ -87,15 +87,10 @@ router.get('/projects/:id', async (req, res) => {
       project,
       //logged_in: req.session.logged_in
     });
-
-    //   res.render('project-details', {
-    //             project,
-    //             //logged_in: req.session.logged_in
-    //           });
-    } catch(err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+  } catch(err) {
+      console.log(err);
+      res.status(500).json(err);
+  }
 });
 
 module.exports = router;

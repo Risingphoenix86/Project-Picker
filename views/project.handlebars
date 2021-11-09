@@ -1,49 +1,41 @@
-<div>
-    <div>
-        <h2>Projects Homepage</h2>
+<div class="container">
+  <div>
+          <h2 class="proj-home">Projects Homepage</h2>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 box">
+      <div class="new-project">
+        <h3 class="new-proj-header">Create a New Project:</h3>
+        <form class="form new-project-form">
+          <div class="form-group">
+            <label for="project-name">Project Name:</label><br />
+            <input class="form-input" type="text" id="project-name" name="project-name" />
+          </div>
+          <div class="form-group">
+            <label for="project-desc">Description:</label><br />
+            <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create Project</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+
+  <div class="project-div">
+    <h2 class="curr-proj">Current Projects</h2>
+    {{#each projects as |project|}}
+      <div class="project-listing">
+        <h3 class="proj-box"><a class="projects" href="/projects/{{id}}">{{project.title}}</a></h3>
+        <div>
+          <p>{{project.content}}</p>
+          <p>{{user.username}}</p>
+        </div>
+      </div> 
+    {{/each}} 
+  </div>
 </div>
 
-<!-- form to create new project  --> 
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
-
-        <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">Project Name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      {{!-- <div class="form-group">
-        <label for="user-name">User Name</label>:</label>
-        <input class="form-input" type="text" id="user-name" name="user-name" />
-      </div> --}}
-      <div class="form-group">
-        <label for="project-desc">Description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create Project</button>
-      </div>
-    </form>
-  </div>
-  
-{{#each projects as |project|}}
-<div class="card">
-    <div>
-      
-      <h3><a href="/projects/{{id}}">{{project.title}}</a></h3>
-    </div>
-    <div>
-       <p>{{project.content}}</p>
-       <p>{{user.username}}</p>
-    </div>
-</div> 
-{{/each}} 
-
-
-
-
 <script src="/js/project.js"></script>
-

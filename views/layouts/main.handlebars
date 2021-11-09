@@ -6,71 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Picker Home</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav class="menu">
-      <ul>
-        <li>
-          <a href="/">
-            <span class="text">Home</span>
-            <span class="line -right"></span>
-            <span class="line -top"></span>
-            <span class="line -left"></span>
-            <span class="line -bottom"></span>
-          </a>
-        </li>
-        <li>
-          <a href= "/dashboard">
-            <span class="text">User Dashboard</span>
-            <span class="line -right"></span>
-            <span class="line -top"></span>
-            <span class="line -left"></span>
-            <span class="line -bottom"></span>
-          </a>
-        </li>
-        <li>
-          <a href="/projects">
-            <span class="text">Projects</span>
-            <span class="line -right"></span>
-            <span class="line -top"></span>
-            <span class="line -left"></span>
-            <span class="line -bottom"></span>
-          </a>
-        </li>
-        {{!-- <li><a href= "#">Library</a></li>
-        <li><a href= "#">Forums</a></li> --}}
-        {{#if logged_in}}
-        <button class="btn" type="submit" id="logout">logout</button>
+    <ul>
+      <li>
+        <a href="/">
+          <span class="text">Home</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      </li>
+      <li>
+        <a href= "/dashboard">
+          <span class="text">User Dashboard</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      </li>
+      <li>
+        <a href="/projects">
+          <span class="text">Projects</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      </li>
+      {{!-- <li><a href= "#">Library</a></li>
+      <li><a href= "#">Forums</a></li> --}}
+      {{#if logged_in}}
+      <button class="btn" type="submit" id="logout">logout</button>
       {{else}}
       <button class="btn" type="submit" id="login">login</button>
       {{/if}}
-      </ul>
+    </ul>
   </nav>
   <header class="Main project-heading">
-    <h1>
-      Project Picker
-    </h1>
+    <h1>Project Picker</h1>
     <h3> Determine your next project with ease using our project picking technology!</h3>
   </header>
 
-    
-
   <main class="main page-body">
-    <!--Renders the templates for other pages -->
-    
     {{{ body }}}
-
   </main>
-  <footer>
-      
-  </footer>
-<!-- Renders the script only if a user is logged in -->
+
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+    <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 

@@ -80,8 +80,83 @@ nav .btn {
     display: inline;
 }
 
+.dashboard-welcome {
+  margin-bottom: 100px;
+  font-size: 40px;
+  color: #5c348c;
+}
+
+.personal-info {
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  float: left;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.user-projects {
+  margin: auto;
+  width: 40%;
+  float: right;
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.personal-proj {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 0;
+  padding-top: 10px;
+}
+
+.user-info {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.proj-home {
+  color:dodgerblue;
+  font-size: 35px;
+}
+
+.curr-proj {
+  color: #5c348c;
+  font-size: 35px;
+}
+
+.proj-box {
+  padding: 0;
+}
+
 .project-heading {
     text-decoration: none;
+    margin: auto;
+}
+
+.project-listing {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 175px;
+  margin: 10px;
+}
+
+.project-listing h3 {
+  font-size: 15px;
+  margin: auto;
+  max-width: 400px;
+}
+
+.project-div {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+  border-top: 2px dotted #5c348c;
 }
 
 .form-group {
@@ -169,8 +244,43 @@ nav .btn {
     text-decoration: none;
 }
 
+.homepage-description {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.concept {
+  color: dodgerblue;
+  padding: 0;
+}
+
+.site-info {
+  color: #5c348c;
+  text-align: justify;
+  text-align-last: center;
+}
+
 h2 {
     text-align: center;
+}
+
+.new-project {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.new-proj-header {
+  font-size: 20px;
+  padding: 0;
+}
+
+.projects {
+  text-decoration: none;
+  color: #5c348c;
 }
 
 .menu a {
@@ -270,3 +380,70 @@ h2 {
     transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
     transform-origin: left;
   }
+
+@keyframes Border {
+  0% {border-color: crimson;}
+  20% {border-color: orange;}
+  40% {border-color: goldenrod;}
+  60% {border-color: green;}
+  80% {border-color: DarkBlue;}
+  100% {border-color: purple}
+}
+
+.border:nth-child(1){
+  border: 3px solid;
+  padding: 25px;
+  border-radius: 15px;
+  animation:Border 5s infinite alternate;
+}
+
+.box{
+  margin: auto;
+  display: flex;
+  width: 400px; height: 300px;
+  background-color: #DDFFF7;
+  position: relative;
+  box-shadow: 10px 10px 42px 0 rgba(0,0,0,0.75);
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.box:after, .box:before{
+  mix-blend-mode:multiply;
+  filter:none;
+  z-index: -1;
+  content:'';
+  width:calc(100% + (50px * 2));
+  height:calc(100% + (50px * 2));
+  position: absolute;
+  display: block;
+  animation: border 10s ease-in-out infinite;
+  transform:translateX(-50px) translateY(-50px);
+}
+@keyframes border {
+  0%, 100% {
+    -webkit-clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+            clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+  }
+  50% {
+    -webkit-clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+            clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+  }
+}
+
+.box:after{
+  animation-delay: -5s;
+  background-color: #93e1d8;
+  clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+}
+.box:before {
+  background-color: #AA4465;
+    clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+}
+
+.box:hover:after{
+  animation-delay: -0.1s;
+}
+.box:hover:before, .box:hover:after {
+
+  animation-duration: 0.2s;
+}
