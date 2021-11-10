@@ -123,6 +123,12 @@ nav .btn {
   font-size: 35px;
 }
 
+.create-comment {
+  padding: 10px;
+  margin: auto;
+  font-size: 20px;
+}
+
 .curr-proj {
   color: #5c348c;
   font-size: 35px;

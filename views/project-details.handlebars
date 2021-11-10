@@ -1,5 +1,34 @@
 <section class="card">
-  <a href="/projects/{{id}}">{{project.title}}</a>
-  <h4 class="project-random">{{project.content}}</h4>
-  <p>Created by {{project.user.username}} on {{format_date project.date_created}}</p>
+  <div>
+    <a href="/projects/{{id}}">{{project.title}}</a>
+    <h4 class="project-random">{{project.content}}</h4>
+    <p>Created by {{project.user.username}} on {{format_date project.date_created}}</p>
+  </div>
 </section>
+<div class="card">
+  {{#if comments}} 
+    <h1>Comments:</h1>
+  {{/if}}
+  {{#each comments as |comment|}}
+    <div>
+      <p>{{comment.comment_text}}</p>
+      <p>{{comment.user.username}} {{format_date comment.created_at}}</p>
+    </div>
+  {{/each}}
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3 class="create-comment">Create a New Comment:</h3>
+      <form class="form new-comment-form">
+        <div class="form-group">
+          <label class="form-label" for="comment_text"></label>
+          <textarea class="form-input" id="comment_text" name="comment_text"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/comment.js"></script>
